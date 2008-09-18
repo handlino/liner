@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>simple liner test</title>
+    <style type="text/css">
+      @import url(test.css);
+    </style>
+    <script type="text/javascript" src="lib/jquery-1.2.6.js"></script>
+    <script type="text/javascript" src="lib/ui/jquery.ui.all.js"></script>
+    <script type="text/javascript" src="../lib/liner.js"></script>
+    <script type="text/javascript">
+      $(function() {
+          new Liner({ "from": "#c10", "to": "#c11" });
+
+          $(".circle").draggable({
+              'drag': function() { Liner.redraw(); }
+          });
+      });
+    </script>
+  </head>
+  <body>
+
+    <p class="hint">Drag them</p>
+    <div id="c10" class="circle large">甲</div>
+    <div id="c11" class="circle huge">乙</div>
+
+  </body>
+</html>

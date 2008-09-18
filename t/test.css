@@ -1,0 +1,49 @@
+canvas {
+    /* border: 1px solid #eee; */
+}
+
+p.hint {
+    font-size: 2em;
+    text-align: center;
+}
+
+.circle {
+    width: 10px;
+    height: 10px;
+    font-size: 10px;
+    line-height: 10px;
+
+    text-align: center;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border: 2px solid black;
+    background: #ffc;
+
+    position: absolute;
+}
+
+.circle.large {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 50px;
+}
+
+.circle.huge {
+    width: 125px;
+    height: 125px;
+    line-height: 125px;
+    font-size: 125px;
+}
+
+#c1 { top: 100px; left: 100px; }
+
+#c2 { top: 150px; left: 170px; }
+
+#c3 { top: 250px; left: 300px; }
+#c4 { top: 450px; left: 250px; }
+
+#c10 { top: 150px; left: 400px; }
+#c11 { top: 250px; left: 500px; }
+
