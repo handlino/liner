@@ -8,33 +8,50 @@
 
     </style>
     <script type="text/javascript" src="lib/jquery-1.2.6.js"></script>
-    <script type="text/javascript" src="lib/ui/jquery.ui.all.js"></script>
+
+    <script type="text/javascript" src="lib/yui/yahoo-dom-event.js"></script>
+    <script type="text/javascript" src="lib/yui/dragdrop-min.js"></script>
+
     <script type="text/javascript" src="../lib/liner.js"></script>
-    <script type="text/javascript" src="../lib/liner-jquery.js"></script>
+    <script type="text/javascript" src="../lib/liner-yui.js"></script>
     <script type="text/javascript">
 
 window.onload = function() {
-        new Liner({ "from": "#c1", "to": "#c2" });
-        new Liner({ "from": "#c2", "to": "#c3" });
-        new Liner({ "from": "#c2", "to": "#c4" });
-        new Liner({ "from": "#c3", "to": "#c4" });
-        new Liner({ "from": "#c10", "to": "#c11" });
 
-        var friends = [ "adela213", "cindy313", "azx52028",
-            "b770608", "trcy", "vgg2", "sagax", "yuemi99" ];
+    new Liner({ "from": "#c1", "to": "#c2" });
+    new Liner({ "from": "#c2", "to": "#c3" });
+    new Liner({ "from": "#c2", "to": "#c4" });
+    new Liner({ "from": "#c3", "to": "#c4" });
+    new Liner({ "from": "#c10", "to": "#c11" });
 
-        for(var i = 0, l = friends.length; i < l ; i++ ) {
-            $("#" + friends[i]).css({
-                top: Math.floor(i/2) * 120,
-                left: (i % 2) ? 80 : 600
-            });
+    var friends = [ "adela213", "cindy313", "azx52028",
+        "b770608", "trcy", "vgg2", "sagax", "yuemi99" ];
 
-            new Liner({
-                from: "#hlb", to: "#" + friends[i],
-                label: ["ケロケロ", "タマタマ","ギロギロ","クルクル","ドロドロ"][i%5]
-            });
-        }
-    };
+    for(var i = 0, l = friends.length; i < l ; i++ ) {
+        $("#" + friends[i]).css({
+            top: Math.floor(i/2) * 120,
+            left: (i % 2) ? 80 : 600
+        });
+
+        new Liner({
+            from: "#hlb", to: "#" + friends[i],
+            label: ["ケロケロ", "タマタマ","ギロギロ","クルクル","ドロドロ"][i%5]
+        });
+    }
+
+    // Make them draggable so we can test.
+    var redraw = function(e, id) { Liner.redraw(); };
+
+    var allids = ["c1", "c2","c3","c4","c10","c11", "hlb"];
+    for(var i = 0, l = friends.length; i < l ; i++ ) {
+        allids.push(friends[i]);
+    }
+
+    for (var i = 0, l = allids.length; i < l; i++) {
+        (new YAHOO.util.DD(allids[i])).onMouseUp = redraw;
+    }
+
+};
     </script>
   </head>
   <body>
