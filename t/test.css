@@ -79,3 +79,15 @@ p.hint {
 #c24 { top: 420px; left: 150px; }
 #c25 { top: 500px; left: 550px; }
 
+
+
+/* for friend.t.html */
+#friend {
+    position: relative;
+    width: 960px;
+    height: 100%;
+    margin: 0 auto;
+}
+div.box.image { width: auto; height: auto; }
+div.box.image img {}
+div#hlb { top: 190px; left: 300px; }
