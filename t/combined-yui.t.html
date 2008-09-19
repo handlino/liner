@@ -7,9 +7,8 @@
 #friend { top:500px; }
 
     </style>
-    <script type="text/javascript" src="lib/jquery-1.2.6.js"></script>
-
     <script type="text/javascript" src="lib/yui/yahoo-dom-event.js"></script>
+    <script type="text/javascript" src="lib/yui/selector-beta-min.js"></script>
     <script type="text/javascript" src="lib/yui/dragdrop-min.js"></script>
 
     <script type="text/javascript" src="../lib/liner.js"></script>
@@ -28,7 +27,8 @@ window.onload = function() {
         "b770608", "trcy", "vgg2", "sagax", "yuemi99" ];
 
     for(var i = 0, l = friends.length; i < l ; i++ ) {
-        $("#" + friends[i]).css({
+        var el = document.getElementById(friends[i]);
+        Liner.css( el, {
             top: Math.floor(i/2) * 120,
             left: (i % 2) ? 80 : 600
         });
