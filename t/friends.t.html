@@ -1,0 +1,78 @@
+<html>
+  <head>
+    <title>simple liner test</title>
+    <style type="text/css">
+
+@import url(test.css);
+
+#friend {
+    position: relative;
+    width: 960px;
+    height: 100%;
+    margin: 0 auto;
+}
+div.box.image { width: auto; height: auto; }
+div.box.image img {
+}
+
+div#hlb { top: 190px; left: 300px; }
+
+    </style>
+    <script type="text/javascript" src="lib/jquery-1.2.6.js"></script>
+    <script type="text/javascript" src="lib/ui/jquery.ui.all.js"></script>
+    <script type="text/javascript" src="../lib/liner.js"></script>
+    <script type="text/javascript">
+      $(function() {
+          var friend_of = {
+              "hlb": [
+                  "adela213",
+                  "cindy313",
+                  "azx52028",
+                  "b770608",
+                  "trcy",
+                  "vgg2",
+                  "sagax",
+                  "yuemi99"
+              ]
+          };
+
+          $.each(
+              friend_of.hlb,
+              function(i) {
+                  $("<div></div>")
+                  .attr("id", this)
+                  .addClass("box image")
+                  .css({
+                      top: Math.floor(i/2) * 120,
+                      left: (i % 2) ? 80 : 600
+                  })
+                  .html("<img src=\"images/gravatar/" + this + "_90.jpg\">")
+                  .appendTo("#friend");
+              }
+          );
+
+          $(window).load(function() {
+              $.each(
+                  friend_of.hlb,
+                  function(i) {
+                      new Liner({
+                          from: "#hlb",
+                          to: "#" + this,
+                          label: [
+                              "ケロケロ", "タマタマ","ギロギロ","クルクル","ドロドロ"
+                          ][i%5]
+                      });
+                  }
+              );
+
+              $(".box").draggable({ 'stop': function() { Liner.redraw(); } });
+          });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="friend">
+      <div id="hlb" class="box image"><img src="images/gravatar/hlb.png" alt="hlb"></div>
+    </div>
+  </body>
+</html>
