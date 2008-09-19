@@ -9,14 +9,17 @@
     <script type="text/javascript" src="../lib/liner.js"></script>
     <script type="text/javascript">
       $(function() {
-          new Liner({
-              "from": "#c20",
-              "to": "#c21",
-              "label": "Teacher Of"
-          });
+          new Liner({"from": "#c20", "to": "#c21", "label": "SQLab"});
+
+          new Liner({"from": "#c21", "to": "#c22", "label": "Partner"});
+          new Liner({"from": "#c21", "to": "#c23", "label": "Partner"});
+          new Liner({"from": "#c22", "to": "#c23", "label": "Partner"});
+
+          new Liner({"from": "#c22", "to": "#c24", "label": "Designer"});
+          new Liner({"from": "#c23", "to": "#c25", "label": "Rails People"});
 
           $(".box").draggable({
-              'drag': function() { Liner.redraw(); }
+              'stop': function() { Liner.redraw(); }
           });
 
       });
@@ -27,6 +30,10 @@
     <p class="hint">Drag them. All lines should be labeled.</p>
     <div id="c20" class="box large">skhuang</div>
     <div id="c21" class="box large">gugod</div>
+    <div id="c22" class="box large">hlb</div>
+    <div id="c23" class="box large">ihower</div>
+    <div id="c24" class="box large">underfire</div>
+    <div id="c25" class="box large">xdite</div>
 
   </body>
 </html>

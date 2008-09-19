@@ -1,5 +1,9 @@
+div.liner {
+/*     border: 1px solid #eee; */
+}
+
 canvas {
-    /* border: 1px solid #eee; */
+/*     border: 1px solid #aac; */
 }
 
 p.hint {
@@ -68,6 +72,10 @@ p.hint {
 #c10 { top: 150px; left: 400px; }
 #c11 { top: 250px; left: 500px; }
 
-#c20 { top: 150px; left: 150px; }
-#c21 { top: 250px; left: 600px; }
+#c20 { top: 100px; left: 150px; }
+#c21 { top: 180px; left: 550px; }
+#c22 { top: 260px; left: 150px; }
+#c23 { top: 340px; left: 550px; }
+#c24 { top: 420px; left: 150px; }
+#c25 { top: 500px; left: 550px; }
 
