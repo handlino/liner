@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>simple liner test</title>
+    <style type="text/css">
+      @import url(test.css);
+    </style>
+    <script type="text/javascript" src="lib/jquery-1.2.6.js"></script>
+    <script type="text/javascript" src="lib/ui/jquery.ui.all.js"></script>
+    <script type="text/javascript" src="../lib/liner.js"></script>
+    <script type="text/javascript">
+      $(function() {
+          new Liner({
+              "from": "#c20",
+              "to": "#c21",
+              "label": "Teacher Of"
+          });
+
+          $(".box").draggable({
+              'drag': function() { Liner.redraw(); }
+          });
+
+      });
+    </script>
+  </head>
+  <body>
+
+    <p class="hint">Drag them. All lines should be labeled.</p>
+    <div id="c20" class="box large">skhuang</div>
+    <div id="c21" class="box large">gugod</div>
+
+  </body>
+</html>

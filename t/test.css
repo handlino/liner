@@ -7,6 +7,27 @@ p.hint {
     text-align: center;
 }
 
+.box {
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    position: absolute;
+
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border: 1px solid #cfc;
+    background: #cfc;
+
+    padding: 0px;
+}
+
+.box.large {
+    height: 48px;
+    line-height: 48px;
+    font-size: 48px;
+    text-align: center;
+}
+
 .circle {
     width: 10px;
     height: 10px;
@@ -46,4 +67,7 @@ p.hint {
 
 #c10 { top: 150px; left: 400px; }
 #c11 { top: 250px; left: 500px; }
+
+#c20 { top: 150px; left: 150px; }
+#c21 { top: 250px; left: 600px; }
 
