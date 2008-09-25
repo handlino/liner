@@ -1,10 +1,6 @@
-div.liner {
-/*     border: 1px solid #eee; */
-}
-
-canvas {
-/*     border: 1px solid #aac; */
-}
+/* Require so lines goes under nodes. */
+div.node { z-index: 2; }
+div.liner { z-index: 1; }
 
 p.hint {
     font-size: 2em;
