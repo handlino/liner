@@ -1,6 +1,11 @@
 /* Require so lines goes under nodes. */
 div.node { z-index: 2; }
 div.liner { z-index: 1; }
+div.label {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+}
 
 p.hint {
     font-size: 2em;
