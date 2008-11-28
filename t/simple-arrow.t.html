@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>simple liner test</title>
+    <style type="text/css">
+      @import url(test.css);
+    </style>
+    <script type="text/javascript" src="lib/jquery-1.2.6.js"></script>
+    <script type="text/javascript" src="lib/ui/jquery.ui.all.js"></script>
+    <script type="text/javascript" src="../lib/liner.js"></script>
+    <script type="text/javascript" src="../lib/liner-jquery.js"></script>
+    <script type="text/javascript">
+      $(function() {
+          // No arrow
+          new Liner({ "from": "#c10", "to": "#c11",
+                      lineWidth: 5
+                    });
+
+          new Liner({
+              "from": "#c12",
+              "to": "#c10",
+              lineWidth: 3,
+              arrow: true,
+              arrowSize: 15,
+              arrowColor: "#a00"
+          });
+
+          $(".circle").draggable({
+              'stop': function() { Liner.redraw(); }
+          });
+      });
+    </script>
+  </head>
+  <body>
+
+    <p class="hint">Drag them</p>
+
+    <div id="c10" class="node circle large">10</div>
+    <div id="c11" class="node circle large">11</div>
+    <div id="c12" class="node circle large">12</div>
+  </body>
+</html>
